@@ -1,15 +1,17 @@
-＃ 领域
+# DOMAIN
 # 匹配完整域名
 
-# 域名后缀
+# DOMAIN-SUFFIX
 # 匹配域名后缀
 
 
-# 习惯
-域名后缀，uu-gg.one
-域名后缀，cloudflarestorage.com
-域名后缀，catbox.moe
-域名后缀,ckslb.com
-域名后缀,civitai.com
-域名后缀,virtamate.com
-域名后缀,mjedge.net
+# 自定义
+DOMAIN-SUFFIX,uu-gg.one
+DOMAIN-SUFFIX,cloudflarestorage.com
+DOMAIN-SUFFIX,catbox.moe
+DOMAIN-SUFFIX,ckslb.com
+DOMAIN-SUFFIX,civitai.com
+DOMAIN-SUFFIX,virtamate.com
+DOMAIN-SUFFIX,mjedge.net
+
+
