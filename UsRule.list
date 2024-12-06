@@ -6,9 +6,6 @@ DOMAIN-SUFFIX,docker.com
 DOMAIN-SUFFIX,github.com
 DOMAIN-SUFFIX,githubusercontent.com
 
-# 赔钱机场
-DOMAIN-SUFFIX,xn--cp3a08l.com
-
 # mega
 DOMAIN-SUFFIX,mega.nz
 
