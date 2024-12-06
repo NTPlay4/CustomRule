@@ -1,9 +1,6 @@
 # mega
 DOMAIN-SUFFIX,mega.nz
 
-# steamstatic
-video.fastly.steamstatic.com
-
 # docker
 DOMAIN-SUFFIX,docker.io
 DOMAIN-SUFFIX,docker.com
