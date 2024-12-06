@@ -11,3 +11,6 @@ DOMAIN-SUFFIX,xn--cp3a08l.com
 
 # mega
 DOMAIN-SUFFIX,mega.nz
+
+# steamstatic
+video.fastly.steamstatic.com
