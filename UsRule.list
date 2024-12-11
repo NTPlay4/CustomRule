@@ -5,3 +5,6 @@ DOMAIN-SUFFIX,docker.com
 # github
 DOMAIN-SUFFIX,github.com
 DOMAIN-SUFFIX,githubusercontent.com
+
+# gemini
+gemini.google.com
