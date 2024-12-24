@@ -2,9 +2,5 @@
 DOMAIN-SUFFIX,docker.io
 DOMAIN-SUFFIX,docker.com
 
-# github
-DOMAIN-SUFFIX,github.com
-DOMAIN-SUFFIX,githubusercontent.com
-
 # gemini
 DOMAIN-SUFFIX,gemini.google.com
