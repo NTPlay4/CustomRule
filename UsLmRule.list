@@ -3,7 +3,3 @@ DOMAIN-SUFFIX,cloudflarestorage.com
 
 # pytorch
 DOMAIN-SUFFIX,pytorch.org
-
-# github
-DOMAIN-SUFFIX,github.com
-DOMAIN-SUFFIX,githubusercontent.com
