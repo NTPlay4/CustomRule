@@ -4,3 +4,6 @@ DOMAIN-SUFFIX,githubusercontent.com
 
 # gemini
 DOMAIN-SUFFIX,gemini.google.com
+
+# civitai
+DOMAIN-SUFFIX,civitai.com
