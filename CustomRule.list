@@ -4,7 +4,6 @@
 # DOMAIN-SUFFIX
 # 匹配域名后缀
 
-
 # 自定义
 DOMAIN-SUFFIX,uu-gg.one
 DOMAIN-SUFFIX,catbox.moe
@@ -12,6 +11,10 @@ DOMAIN-SUFFIX,ckslb.com
 DOMAIN-SUFFIX,virtamate.com
 DOMAIN-SUFFIX,mjedge.net
 DOMAIN-SUFFIX,jable.tv
+DOMAIN-SUFFIX,bepis.moe
 
 # flathub
 DOMAIN-SUFFIX,flathub.org
+
+# cloudflare
+DOMAIN-SUFFIX,cloudflare.com
