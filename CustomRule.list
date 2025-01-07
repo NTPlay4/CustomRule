@@ -14,6 +14,8 @@ DOMAIN-SUFFIX,jable.tv
 DOMAIN-SUFFIX,bepis.moe
 DOMAIN-SUFFIX,moe-acg.com
 
+# civitai
+DOMAIN-SUFFIX,civitai.com
 
 # flathub
 DOMAIN-SUFFIX,flathub.org
