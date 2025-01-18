@@ -13,6 +13,7 @@ DOMAIN-SUFFIX,mjedge.net
 DOMAIN-SUFFIX,jable.tv
 DOMAIN-SUFFIX,bepis.moe
 DOMAIN-SUFFIX,moe-acg.com
+DOMAIN-SUFFIX,translate.google.com
 
 # civitai
 DOMAIN-SUFFIX,civitai.com
@@ -22,3 +23,4 @@ DOMAIN-SUFFIX,flathub.org
 
 # cloudflare
 DOMAIN-SUFFIX,cloudflare.com
+
