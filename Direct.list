@@ -10,7 +10,7 @@ DOMAIN-SUFFIX,quickconnect.cn
 
 DOMAIN-SUFFIX,blog.cloudflare.com
 
-DOMAIN-SUFFIX,uploads-sdk.dhsf.xqhuyu.com
+;DOMAIN-SUFFIX,uploads-sdk.dhsf.xqhuyu.com
 
 IP-CIDR,37.48.81.219/32
 IP-CIDR,37.48.81.200/32
