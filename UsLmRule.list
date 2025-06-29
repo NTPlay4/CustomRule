@@ -1,9 +1,12 @@
 # docker
 DOMAIN-SUFFIX,docker.io
 DOMAIN-SUFFIX,docker.com
+DOMAIN-SUFFIX,ghcr.io
 
 # cloudflarestorage
 DOMAIN-SUFFIX,cloudflarestorage.com
 
 # pytorch
 DOMAIN-SUFFIX,pytorch.org
+
+
