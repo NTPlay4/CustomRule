@@ -21,3 +21,6 @@ DOMAIN-SUFFIX,exhentai.org
 # gemini api
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,safebrowsing.googleapis.com
+
+# claw
+DOMAIN-SUFFIX,claw.cloud
