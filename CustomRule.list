@@ -29,3 +29,6 @@ DOMAIN-SUFFIX,cloudflare.com
 
 # f95zone
 DOMAIN-KEYWORD,f95zone
+
+# blue-plus
+DOMAIN-KEYWORD,blue-plus
