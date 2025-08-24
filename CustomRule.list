@@ -7,14 +7,23 @@
 # DOMAIN-KEYWORD
 # 域名关键字
 
-# 自定义
+# uugg
 DOMAIN-KEYWORD,uu-gg.one
+
+# ????
 DOMAIN-SUFFIX,catbox.moe
+
+# ????
 DOMAIN-SUFFIX,ckslb.com
+
+# ????
 DOMAIN-SUFFIX,mjedge.net
+
+# 动作大全
 DOMAIN-SUFFIX,jable.tv
+
+# 恋活卡片
 DOMAIN-SUFFIX,bepis.moe
-DOMAIN-SUFFIX,moe-acg.com
 
 
 # flathub
