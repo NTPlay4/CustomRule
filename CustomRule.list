@@ -24,3 +24,5 @@ DOMAIN-SUFFIX,flathub.org
 # cloudflare
 DOMAIN-SUFFIX,cloudflare.com
 
+# f95zone
+DOMAIN-SUFFIX,f95zone.to
