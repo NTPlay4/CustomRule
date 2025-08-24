@@ -11,14 +11,10 @@
 DOMAIN-KEYWORD,uu-gg.one
 DOMAIN-SUFFIX,catbox.moe
 DOMAIN-SUFFIX,ckslb.com
-DOMAIN-SUFFIX,virtamate.com
 DOMAIN-SUFFIX,mjedge.net
 DOMAIN-SUFFIX,jable.tv
 DOMAIN-SUFFIX,bepis.moe
 DOMAIN-SUFFIX,moe-acg.com
-DOMAIN-SUFFIX,translate.google.com
-DOMAIN-SUFFIX,mhh1.com
-DOMAIN-SUFFIX,cangku.moe
 
 
 # flathub
@@ -32,3 +28,15 @@ DOMAIN-KEYWORD,f95zone
 
 # blue-plus
 DOMAIN-KEYWORD,blue-plus
+
+# VAM
+DOMAIN-SUFFIX,virtamate.com
+
+# 绅士仓库
+DOMAIN-KEYWORD,cangku
+
+# 萌幻之乡
+DOMAIN-SUFFIX,mhh1.com
+
+# 谷歌翻译
+DOMAIN-SUFFIX,translate.google.com
