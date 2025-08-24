@@ -4,6 +4,9 @@
 # DOMAIN-SUFFIX
 # 匹配域名后缀
 
+# DOMAIN-KEYWORD
+# 域名关键字
+
 # 自定义
 DOMAIN-SUFFIX,uu-gg.one
 DOMAIN-SUFFIX,catbox.moe
@@ -25,4 +28,4 @@ DOMAIN-SUFFIX,flathub.org
 DOMAIN-SUFFIX,cloudflare.com
 
 # f95zone
-DOMAIN-SUFFIX,f95zone.to
+DOMAIN-KEYWORD,f95zone
