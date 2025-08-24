@@ -12,3 +12,6 @@ DOMAIN-SUFFIX,pytorch.org
 
 # kemono
 DOMAIN-KEYWORD,kemono
+
+# VAM CDN
+DOMAIN-SUFFIX,cdn77.org
