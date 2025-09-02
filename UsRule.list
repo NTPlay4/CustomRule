@@ -16,8 +16,5 @@ DOMAIN-SUFFIX,civitai.com
 # nvidia
 DOMAIN-SUFFIX,nvidia.com
 
-# claw
-DOMAIN-SUFFIX,claw.cloud
-
 # steamgriddb
 DOMAIN-SUFFIX,steamgriddb.com
