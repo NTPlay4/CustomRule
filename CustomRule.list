@@ -49,10 +49,5 @@ DOMAIN-SUFFIX,mhh1.com
 # 谷歌翻译
 DOMAIN-SUFFIX,translate.google.com
 
-# e-hentai
-DOMAIN-SUFFIX,hentaiathome.net
-DOMAIN-SUFFIX,e-hentai.org
-DOMAIN-SUFFIX,exhentai.org
-
 # blue-plus
 DOMAIN-SUFFIX,blue-plus.net
