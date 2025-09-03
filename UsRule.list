@@ -20,10 +20,13 @@ DOMAIN-SUFFIX,nvidia.com
 DOMAIN-SUFFIX,steamgriddb.com
 
 # blue-plus-CF
-DOMAIN-SUFFIX,blue-plus.net
+DOMAIN-KEYWORD,blue-plus
 
 # uugg-CF
 DOMAIN-KEYWORD,uu-gg
 
 # VAM-CF
 DOMAIN-SUFFIX,virtamate.com
+
+# cloudflare
+DOMAIN-SUFFIX,cloudflare.com
