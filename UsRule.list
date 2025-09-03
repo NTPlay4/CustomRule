@@ -7,8 +7,7 @@ DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,aistudio.google.com
 
 # gemini api
-DOMAIN-SUFFIX,generativelanguage.googleapis.com
-DOMAIN-SUFFIX,safebrowsing.googleapis.com
+DOMAIN-SUFFIX,googleapis.com
 
 # civitai
 DOMAIN-SUFFIX,civitai.com
