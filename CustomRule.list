@@ -25,14 +25,8 @@ DOMAIN-SUFFIX,bepis.moe
 # flathub
 DOMAIN-SUFFIX,flathub.org
 
-# cloudflare
-DOMAIN-SUFFIX,cloudflare.com
-
 # f95zone
 DOMAIN-KEYWORD,f95zone
-
-# blue-plus
-DOMAIN-KEYWORD,blue-plus
 
 # 绅士仓库
 DOMAIN-KEYWORD,cangku
