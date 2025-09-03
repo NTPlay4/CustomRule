@@ -7,9 +7,6 @@
 # DOMAIN-KEYWORD
 # 域名关键字
 
-# uugg
-DOMAIN-KEYWORD,uu-gg
-
 # ????无法访问
 DOMAIN-SUFFIX,catbox.moe
 
@@ -48,6 +45,3 @@ DOMAIN-SUFFIX,mhh1.com
 
 # 谷歌翻译
 DOMAIN-SUFFIX,translate.google.com
-
-# blue-plus
-DOMAIN-SUFFIX,blue-plus.net
