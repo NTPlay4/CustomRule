@@ -29,3 +29,6 @@ DOMAIN-SUFFIX,virtamate.com
 
 # cloudflare
 DOMAIN-SUFFIX,cloudflare.com
+
+# tekqart.com
+DOMAIN-SUFFIX,tekqart.com
