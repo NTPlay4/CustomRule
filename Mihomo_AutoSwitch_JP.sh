@@ -17,7 +17,7 @@ PROXY_GROUP_NAME="🇯🇵 日本节点"
 # 【！！！检测目标网站列表！！！】
 TARGET_URLS=(
     "https://www.pixiv.net"
-    "https://pximg.net"
+    "https://i.pximg.net"
     "https://e-hentai.org"
     "http://ecchi.iwara.tv"
 )
