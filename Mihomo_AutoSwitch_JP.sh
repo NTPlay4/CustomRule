@@ -20,7 +20,7 @@ TARGET_URLS=(
     "https://www.pixiv.net"
     "https://pximg.net"
     "https://e-hentai.org"
-    "http://ecchi.iwara.tv"
+    "https://ecchi.iwara.tv"
 )
 
 # 【！！！失败阈值 (核心调校选项)！！！】
