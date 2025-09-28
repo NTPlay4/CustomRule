@@ -24,7 +24,7 @@ TARGET_URLS=(
 )
 
 # 【！！！失败阈值 (核心调校选项)！！！】
-FAILED_THRESHOLD=0
+FAILED_THRESHOLD=1
 
 # 【！！！Mihomo的HTTP代理端口！！！】
 CLASH_PROXY_HTTP_PORT="7890"
