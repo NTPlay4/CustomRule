@@ -1,15 +1,15 @@
 #!/bin/bash
 # ===================================================================================
-#  脚本名称: AutoSwitch-Pro.sh
-#  D姐荣誉出品: 【专业调校版 · 完整功能】
-#  功能:     在最终成品的基础上，增加了【失败阈值】的可调选项，
-#            您可以精确控制脚本的切换灵敏度。
+#  脚本名称: AutoSwitch-Pro-NodeInfo.sh
+#  D姐荣誉出品: 【日志增强版 - 实时显示当前节点状态】
+#  功能:     在【专业调校版】的基础上，增加在网络检测前显示当前活动节点信息的日志，
+#            让脚本工作状态一目了然。
 # ===================================================================================
 
 # ================================ 【请仔细配置此区域】 ================================= #
 
 # 【！！！您的真实密钥！！！】
-CLASH_API_SECRET="您的真实密钥" # <--- !!! 请务-务-务-必】替换为您的真实完整密钥 !!!
+CLASH_API_SECRET="" # <--- !!! 请务-务-务-必】替换为您的真实完整密钥 !!!
 
 # 【！！！目标代理组！！！】
 PROXY_GROUP_NAME="🇺🇲 美国节点"
@@ -24,10 +24,9 @@ TARGET_URLS=(
 
 # 【！！！失败阈值 (核心调校选项)！！！】
 # 允许多少个网站检测失败而不触发切换。
-# FAILED_THRESHOLD=0 : 最灵敏。只要有1个或更多网站失败，就会切换。(一票否决)
-# FAILED_THRESHOLD=1 : 较宽容。只有当失败的网站达到2个或更多时，才会切换。
-# FAILED_THRESHOLD=2 : 更宽容。只有当失败的网站达到3个或更多时，才会切换。
-FAILED_THRESHOLD=1
+# 0: 最灵敏。1个或更多网站失败即切换。(一票否决)
+# 1: 较宽容。2个或更多网站失败时才切换。
+FAILED_THRESHOLD=0
 
 # 【！！！Mihomo的HTTP代理端口！！！】
 CLASH_PROXY_HTTP_PORT="7890"
@@ -44,6 +43,23 @@ JQ_BIN="/usr/bin/jq"
 CLASH_API_BASE_URL="http://${CLASH_API_IP}:${CLASH_API_PORT}"
 
 log() { echo "$(date '+%H:%M:%S') $1 - $2"; }
+
+# 【新增或修改此函数：获取并打印当前节点信息】
+get_and_log_current_node() {
+    log "INFO" "正在获取当前代理组 '$PROXY_GROUP_NAME' 的活动节点..."
+    local headers="-H \"Content-Type: application/json\""; if [ -n "$CLASH_API_SECRET" ]; then headers+=" -H \"Authorization: Bearer $CLASH_API_SECRET\""; fi
+    local encoded_group_name=$(echo -n "$PROXY_GROUP_NAME" | "$JQ_BIN" -sRr @uri); local final_url="${CLASH_API_BASE_URL}/proxies/${encoded_group_name}"
+    local api_response=$("$CURL_BIN" -s $headers "$final_url")
+
+    # 包含我们强大的错误诊断功能
+    if ! echo "$api_response" | "$JQ_BIN" -e '.now' > /dev/null 2>&1; then
+        log "ERROR" "Mihomo API返回异常或无法解析当前节点信息！"; log "ERROR" "API原始回复: $api_response"; return 1;
+    fi
+    local current_node=$(echo "$api_response" | "$JQ_BIN" -r '.now')
+    log "INFO" "当前活动节点为: 【$current_node】"
+    return 0
+}
+
 
 # 【函数一：网站连通性检测 (已集成阈值判断)】
 check_website_access() {
@@ -77,10 +93,11 @@ switch_to_next() {
     local encoded_group_name=$(echo -n "$PROXY_GROUP_NAME" | "$JQ_BIN" -sRr @uri); local final_url="${CLASH_API_BASE_URL}/proxies/${encoded_group_name}"
     local api_response=$("$CURL_BIN" -s $headers "$final_url")
 
-    if ! echo "$api_response" | "$JQ_BIN" -e '.all' > /dev/null 2>&1; then log "ERROR" "Mihomo API返回异常！无法切换。"; log "ERROR" "API原始回复: $api_response"; return 1; fi
+    # 注意这里的判断是 '.all'，而不是 '.now'
+    if ! echo "$api_response" | "$JQ_BIN" -e '.all' > /dev/null 2>&1; then log "ERROR" "Mihomo API返回异常或无法解析节点列表！无法切换。"; log "ERROR" "API原始回复: $api_response"; return 1; fi
     mapfile -t all_nodes < <(echo "$api_response" | "$JQ_BIN" -r '.all[]'); local current_node=$(echo "$api_response" | "$JQ_BIN" -r '.now')
     if [ ${#all_nodes[@]} -lt 2 ]; then log "WARNING" "组内节点少于2个，无法切换。"; return 1; fi
-    log "INFO" "当前活动节点: '$current_node'"; local current_index=-1
+    log "INFO" "切换前活动节点: '$current_node'"; local current_index=-1
     for i in "${!all_nodes[@]}"; do if [[ "${all_nodes[$i]}" == "$current_node" ]]; then current_index=$i; break; fi; done
     if [ "$current_index" -eq -1 ]; then log "WARNING" "当前节点不在列表中？将从第一个开始计算。"; current_index=0; fi
 
@@ -97,16 +114,31 @@ switch_to_next() {
 
 # --- 主逻辑 ---
 main() {
-    log "INFO" "--- 【专业调校版】脚本启动 ---"
+    log "INFO" "--- 【日志增强版】脚本启动 ---"
+    
+    # ⚡️ 新增：在开始检测之前，先获取当前节点信息并打印！
+    if ! get_and_log_current_node; then
+        log "ERROR" "无法获取当前节点信息，提前退出脚本。"
+        log "INFO" "--- 脚本运行结束 ---"
+        return 1
+    fi
+
+    # 初次检测
     if check_website_access "开始【初次】网络连通性检测..."; then
         log "INFO" "网络连接良好，无需切换。"
     else
         log "WARNING" "网络不佳，将执行节点切换操作。"
         if switch_to_next; then
             log "INFO" "等待 2 秒，让新节点网络生效..."; sleep 2
-            check_website_access "开始【切换后复核】新节点的连通性..."
+            # 切换成功后，再次获取并打印新节点信息，然后复核
+            if get_and_log_current_node; then
+                check_website_access "开始【切换后复核】新节点的连通性..."
+            else
+                log "WARNING" "切换成功，但无法获取新节点信息进行复核。"
+            fi
         fi
     fi
+    
     log "INFO" "--- 脚本运行结束 ---"
 }
 
