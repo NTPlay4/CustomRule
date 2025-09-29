@@ -1,14 +1,15 @@
 #!/bin/bash
 # ===================================================================================
-#  脚本名称: AutoSwitch-Super-UnifiedLog.sh
-#  D姐荣誉出品: 【终极智能版 · 统一日志路径】
-#  功能:     在【终极智能版】的基础上，将所有日志统一输出到指定的文件路径。
+#  脚本名称: AutoSwitch-Super-DateFixed.sh
+#  D姐荣誉出品: 【终极智能版 · 日期兼容性修正】
+#  功能:     修复了 `date: invalid date` 错误，提高了 `clean_old_logs` 函数在不同
+#            Linux/BusyBox 环境下日期计算的兼容性。
 # ===================================================================================
 
 # ================================ 【请仔细配置此区域】 ================================= #
 
 # 【！！！您的真实密钥！！！】
-CLASH_API_SECRET="您的真实密钥" # <--- !!! 请务-务-务-必】替换为您的真实完整密钥 !!!
+CLASH_API_SECRET="" # <--- !!! 请务-务-务-必】替换为您的真实完整密钥 !!!
 
 # 【！！！目标代理组！！！】
 PROXY_GROUP_NAME="🇺🇲 美国节点"
@@ -28,8 +29,8 @@ FAILED_THRESHOLD=0
 CLASH_PROXY_HTTP_PORT="7890"
 
 # 【！！！⚡️⚡️ 日志配置区域 (已修改为统一路径) ⚡️⚡️！！！】
-LOG_FILE="/overlay/shell/Mihomo_AutoSwitch.log" # <--- !!! 日志文件路径已统一修改 !!!
-LOG_RETENTION_DAYS=7                             # 日志保留天数，超过此天数的日志将被删除
+LOG_FILE="/overlay/shell/Mihomo_AutoSwitch_JP.log"
+LOG_RETENTION_DAYS=7
 
 # 【⚡️ 循环重试与熔断机制参数 ⚡️】
 MAX_RETRY_ATTEMPTS=5
@@ -45,31 +46,42 @@ JQ_BIN="/usr/bin/jq"
 
 CLASH_API_BASE_URL="http://${CLASH_API_IP}:${CLASH_API_PORT}"
 
-# 调整日志函数格式，使其包含完整日期
 log() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') $1 - $2"
 }
 
-# 【清理旧日志函数】 (已利用新 LOG_FILE 路径)
+# 【清理旧日志函数】 - 已升级日期计算兼容性
 clean_old_logs() {
     local temp_log_file="${LOG_FILE}.tmp"
+    local log_dir="$(dirname "$LOG_FILE")"
+
+    # 如果日志目录不存在，尝试创建
+    if [ ! -d "$log_dir" ]; then
+        log "WARNING" "日志文件目录 ($log_dir) 不存在，尝试创建..."
+        if ! mkdir -p "$log_dir"; then
+            log "ERROR" "无法创建日志文件目录 ($log_dir)，日志清理和写入可能受影响。"
+            return 1
+        fi
+        log "INFO" "已创建日志文件目录: $log_dir"
+    fi
+
+    # 如果日志文件不存在，尝试创建空文件
     if [ ! -f "$LOG_FILE" ]; then
-        log "INFO" "日志文件 ($LOG_FILE) 不存在，无需清理。"
-        # 如果日志文件不存在，但其父目录存在，尝试创建空日志文件以备后续写入
-        if [ -d "$(dirname "$LOG_FILE")" ]; then
-            touch "$LOG_FILE"
+        if touch "$LOG_FILE"; then
             chmod 644 "$LOG_FILE"
-            log "INFO" "已创建新的日志文件: $LOG_FILE"
+            log "INFO" "日志文件 ($LOG_FILE) 不存在，已创建新文件。"
         else
-            log "ERROR" "日志文件目录 $(dirname "$LOG_FILE") 不存在，无法创建日志文件。"
-            return 1 # 目录不存在，清理失败
+            log "ERROR" "无法创建日志文件 ($LOG_FILE)，请检查目录权限。"
+            return 1
         fi
         return 0
     fi
 
     log "INFO" "开始清理超过 $LOG_RETENTION_DAYS 天的旧日志..."
     
-    local delete_before_timestamp=$(date -d "$(date '+%Y-%m-%d %H:%M:%S') -${LOG_RETENTION_DAYS} days" +%s)
+    # ⚡️⚡️ 修正：更兼容的日期计算方法 ⚡️⚡️
+    local current_timestamp=$(date +%s)
+    local delete_before_timestamp=$((current_timestamp - LOG_RETENTION_DAYS * 86400)) # 86400秒 = 1天
     
     awk -v dt="$delete_before_timestamp" '
     BEGIN { OFS = "" }
@@ -82,19 +94,20 @@ clean_old_logs() {
                 print
             }
         } else {
-            print # 非标准日期格式的行，保留
+            print # 非标准日期格式的行，为了安全，默认保留
         }
     }' "$LOG_FILE" > "$temp_log_file"
 
-    if [ "$?" -eq 0 ] && [ -s "$temp_log_file" ] || [ ! -f "$LOG_FILE" ] && [ ! -s "$temp_log_file" ]; then # 确保awk成功或原文件就为空
-        # 只有在临时文件非空或者原文件就是空的情况下才替换
+    if [ "$?" -eq 0 ] && [ -f "$temp_log_file" ]; then
         mv "$temp_log_file" "$LOG_FILE"
         chmod 644 "$LOG_FILE"
         log "INFO" "日志清理完成，当前文件行数：$(wc -l < "$LOG_FILE")"
     else
-        log "ERROR" "日志清理失败或awk命令执行异常。保留原文件。临时文件内容（如有）：$(cat "$temp_log_file" 2>/dev/null)"
-        rm -f "$temp_log_file" # 清理临时文件
+        log "ERROR" "日志清理失败或awk命令执行异常。保留原文件。"
+        rm -f "$temp_log_file" 2>/dev/null
+        return 1
     fi
+    return 0
 }
 
 
@@ -112,14 +125,13 @@ check_website_access() {
     fi
 
     for url in "${TARGET_URLS[@]}"; do
-        # 日志写入标准输出，由crontab重定向，不再echo到屏幕
-        log "INFO" "  - 检测: '$url' ... (结果将由log函数统一输出)" # 这里的echo也要改成log
-        # 使用log函数输出检测结果
+        log "INFO" "  - 检测: '$url' ..." 
+
         local http_code=$("$CURL_BIN" -o /dev/null -s -w "%{http_code}" --connect-timeout "$TIMEOUT" --proxy "http://127.0.0.1:${CLASH_PROXY_HTTP_PORT}" -L "$url")
         if [ "$?" -eq 0 ] && [[ "$http_code" -ge 200 && "$http_code" -lt 400 ]]; then
-            log "INFO" "  - 检测: '$url' ... 成功 (HTTP: $http_code)"
+            log "INFO" "    - 结果: '$url' 成功 (HTTP: $http_code)"
         else
-            log "ERROR" "  - 检测: '$url' ... 失败 (HTTP: $http_code)"; failed_count=$((failed_count + 1));
+            log "ERROR" "    - 结果: '$url' 失败 (HTTP: $http_code)"; failed_count=$((failed_count + 1));
         fi
     done
 
@@ -172,4 +184,62 @@ switch_to_next() {
 
 # --- 主逻辑 ---
 main() {
-    log 
+    log "INFO" "--- 【终极智能版 · 日期兼容性修正】脚本启动 (代理组: $PROXY_GROUP_NAME) ---"
+    
+    clean_old_logs # 先清理旧日志
+
+    local attempt=0
+    local switch_needed=false
+
+    if ! get_and_log_current_node; then
+        log "ERROR" "首次启动无法获取当前节点信息，提前退出脚本。"
+        log "INFO" "--- 脚本运行结束 ---"
+        return 1
+    fi
+    
+    if ! check_website_access "开始【初次】网络连通性检测..."; then
+        switch_needed=true
+        log "WARNING" "初次检测网络不佳，将启动循环切换机制。"
+    else
+        log "INFO" "网络连接良好，无需切换。"
+    fi
+    
+    while $switch_needed && [ "$attempt" -lt "$MAX_RETRY_ATTEMPTS" ]; do
+        attempt=$((attempt + 1))
+        log "INFO" "--- 第 $attempt 次尝试切换和检测 (总共 $MAX_RETRY_ATTEMPTS 次) ---"
+        
+        if switch_to_next; then
+            log "INFO" "等待 2 秒，让新节点网络生效..."
+            sleep 2
+            
+            if get_and_log_current_node; then
+                if check_website_access "开始【切换后复核】新节点的连通性..."; then
+                    log "SUCCESS" "✅✅✅ 节点切换成功并复核合格！已退出循环。✅✅✅"
+                    switch_needed=false
+                else
+                    log "WARNING" "新节点检测仍不合格，将尝试下一个节点..."
+                    if [ "$attempt" -eq "$MAX_RETRY_ATTEMPTS" ]; then
+                        log "ERROR" "已达最大重试次数 ($MAX_RETRY_ATTEMPTS)，仍未找到合格节点。放弃切换。"
+                    fi
+                fi
+            else
+                log "WARNING" "切换成功，但无法获取新节点信息进行复核，将尝试下一个节点..."
+                 if [ "$attempt" -eq "$MAX_RETRY_ATTEMPTS" ]; then
+                    log "ERROR" "已达最大重试次数 ($MAX_RETRY_ATTEMPTS)，仍未找到合格节点。放弃切换。"
+                fi
+            fi
+        else
+            log "ERROR" "节点切换操作失败，无法继续尝试。放弃。"
+            switch_needed=false
+        fi
+    done
+
+    if $switch_needed; then
+        log "ERROR" "❌❌❌ 经过 $attempt 次尝试，未能找到合格的节点。请检查代理配置或节点可用性。❌❌❌"
+    fi
+
+    log "INFO" "--- 脚本运行结束 (代理组: $PROXY_GROUP_NAME) ---"
+}
+
+# 执行主函数
+main
