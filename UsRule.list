@@ -46,3 +46,7 @@ DOMAIN-SUFFIX,www.google.com
 # ubi
 DOMAIN-SUFFIX,ubi.com
 DOMAIN-SUFFIX,ubisoft.com
+
+# tailscale
+DOMAIN-SUFFIX,pkgs.tailscale.com
+DOMAIN-SUFFIX,dl.tailscale.com
