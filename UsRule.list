@@ -1,10 +1,3 @@
-# gemini
-DOMAIN-SUFFIX,gemini.google.com
-DOMAIN-SUFFIX,aistudio.google.com
-
-# gemini api
-DOMAIN-SUFFIX,googleapis.com
-
 # civitai
 DOMAIN-SUFFIX,civitai.com
 
