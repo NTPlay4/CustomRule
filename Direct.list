@@ -3,8 +3,9 @@
 ;DOMAIN-SUFFIX,dns.cloudflare.com
 ;DOMAIN-SUFFIX,verysync.cn
 
-DOMAIN-SUFFIX,myds.me
 DOMAIN-SUFFIX,tailscale.com
+
+DOMAIN-SUFFIX,myds.me
 DOMAIN-SUFFIX,quickconnect.to
 DOMAIN-SUFFIX,quickconnect.cn
 
@@ -27,4 +28,4 @@ DOMAIN-SUFFIX,cdn.ubi.com
 DOMAIN-SUFFIX,cloud-skys.com
 DOMAIN-SUFFIX,ntco.win
 
-
+DOMAIN-SUFFIX,nvidia.cn
