@@ -11,14 +11,11 @@ DOMAIN-SUFFIX,steamgriddb.com
 DOMAIN-KEYWORD,blue-plus
 
 # uu-gg.one CF
-DOMAIN-KEYWORD,uu-gg
-DOMAIN-KEYWORD,imgooo
+#DOMAIN-KEYWORD,uu-gg
+#DOMAIN-KEYWORD,imgooo
 
 # VAM CF
 DOMAIN-SUFFIX,virtamate.com
-
-# cloudflare
-DOMAIN-SUFFIX,cloudflare.com
 
 # tekqart.com
 DOMAIN-SUFFIX,tekqart.com
