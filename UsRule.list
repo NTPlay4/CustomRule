@@ -5,9 +5,9 @@ DOMAIN-SUFFIX,gamer520.com
 DOMAIN-SUFFIX,www.google.com
 
 # ubi
-DOMAIN-SUFFIX,ubi.com
-DOMAIN-SUFFIX,ubisoft.com
-DOMAIN-SUFFIX,ubisoft-uplay-savegames.s3.amazonaws.com
+#DOMAIN-SUFFIX,ubi.com
+#DOMAIN-SUFFIX,ubisoft.com
+#DOMAIN-SUFFIX,ubisoft-uplay-savegames.s3.amazonaws.com
 
 # tailscale
 DOMAIN-SUFFIX,pkgs.tailscale.com
