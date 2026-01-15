@@ -1,7 +1,6 @@
 # claw
 DOMAIN-SUFFIX,claw.cloud
 
-
 # iwara
 DOMAIN-SUFFIX,iwara.tv
 
@@ -10,3 +9,18 @@ DOMAIN-SUFFIX,pokemon-home.com
 
 # deviantart.com
 DOMAIN-SUFFIX,deviantart.com
+
+# 动作大全
+DOMAIN-SUFFIX,jable.tv
+
+# 恋活卡片
+DOMAIN-SUFFIX,bepis.moe
+
+# flathub
+DOMAIN-SUFFIX,flathub.org
+
+# 绅士仓库 cangku.moe
+DOMAIN-KEYWORD,cangku
+
+# 萌幻之乡
+DOMAIN-SUFFIX,mhh1.com
