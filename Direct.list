@@ -1,7 +1,7 @@
 # dns
-;DOMAIN-SUFFIX,dns.google
-;DOMAIN-SUFFIX,dns.cloudflare.com
-;DOMAIN-SUFFIX,verysync.cn
+#DOMAIN-SUFFIX,dns.google
+#DOMAIN-SUFFIX,dns.cloudflare.com
+#DOMAIN-SUFFIX,verysync.cn
 
 DOMAIN-SUFFIX,tailscale.com
 
@@ -13,24 +13,20 @@ DOMAIN-SUFFIX,blog.cloudflare.com
 
 ;DOMAIN-SUFFIX,uploads-sdk.dhsf.xqhuyu.com
 
-IP-CIDR,37.48.81.219/32,no-resolve
-IP-CIDR,37.48.81.200/32,no-resolve
-IP-CIDR,212.7.200.99/32,no-resolve
-IP-CIDR,212.7.202.50/32,no-resolve
-IP-CIDR,5.79.104.109/32,no-resolve
+#IP-CIDR,37.48.81.219/32,no-resolve
+#IP-CIDR,37.48.81.200/32,no-resolve
+#IP-CIDR,212.7.200.99/32,no-resolve
+#IP-CIDR,212.7.202.50/32,no-resolve
+#IP-CIDR,5.79.104.109/32,no-resolve
 
 DOMAIN-SUFFIX,taile998.ts.net
 
-DOMAIN-SUFFIX,store.ubisoft.com
-DOMAIN-SUFFIX,store.ubi.com
-DOMAIN-SUFFIX,cdn.ubi.com
+#DOMAIN-SUFFIX,store.ubisoft.com
+#DOMAIN-SUFFIX,store.ubi.com
+#DOMAIN-SUFFIX,cdn.ubi.com
 
 DOMAIN-SUFFIX,cloud-skys.com
 DOMAIN-SUFFIX,ntco.win
 
-DOMAIN-SUFFIX,nvidia.cn
-
-
-DOMAIN-SUFFIX,fastly-download.epicgames.com
-
-DOMAIN-SUFFIX,d4c.srv.nintendo.net
+#DOMAIN-SUFFIX,fastly-download.epicgames.com
+#DOMAIN-SUFFIX,d4c.srv.nintendo.net
