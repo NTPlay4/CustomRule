@@ -13,11 +13,11 @@ DOMAIN-SUFFIX,blog.cloudflare.com
 
 ;DOMAIN-SUFFIX,uploads-sdk.dhsf.xqhuyu.com
 
-IP-CIDR,37.48.81.219/32
-IP-CIDR,37.48.81.200/32
-IP-CIDR,212.7.200.99/32
-IP-CIDR,212.7.202.50/32
-IP-CIDR,5.79.104.109/32
+IP-CIDR,37.48.81.219/32,no-resolve
+IP-CIDR,37.48.81.200/32,no-resolve
+IP-CIDR,212.7.200.99/32,no-resolve
+IP-CIDR,212.7.202.50/32,no-resolve
+IP-CIDR,5.79.104.109/32,no-resolve
 
 DOMAIN-SUFFIX,taile998.ts.net
 
