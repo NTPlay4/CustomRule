@@ -1,3 +1,17 @@
+#本地
+IP-CIDR,127.0.0.0/8,no-resolve
+IP-CIDR,0.0.0.0/8,no-resolve
+IP-CIDR,10.0.0.0/8,no-resolve
+IP-CIDR,100.64.0.0/10,no-resolve
+IP-CIDR,169.254.0.0/16,no-resolve
+IP-CIDR,172.16.0.0/12,no-resolve
+IP-CIDR,192.168.0.0/16,no-resolve
+IP-CIDR,224.0.0.0/4,no-resolve
+IP-CIDR,240.0.0.0/4,no-resolve
+
+DOMAIN-KEYWORD,localhost
+DOMAIN-SUFFIX,localhost
+
 # dns
 #DOMAIN-SUFFIX,dns.google
 #DOMAIN-SUFFIX,dns.cloudflare.com
@@ -31,7 +45,4 @@ DOMAIN-SUFFIX,ntco.win
 #DOMAIN-SUFFIX,fastly-download.epicgames.com
 #DOMAIN-SUFFIX,d4c.srv.nintendo.net
 
-#本地
-IP-CIDR,127.0.0.1/8,no-resolve
-DOMAIN-KEYWORD,localhost
-DOMAIN-SUFFIX,localhost
+
