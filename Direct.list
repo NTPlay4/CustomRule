@@ -34,12 +34,18 @@ DOMAIN-SUFFIX,blog.cloudflare.com
 #IP-CIDR,5.79.104.109/32,no-resolve
 
 DOMAIN-SUFFIX,taile998.ts.net
+
 #DOMAIN-SUFFIX,store.ubisoft.com
 #DOMAIN-SUFFIX,store.ubi.com
 #DOMAIN-SUFFIX,cdn.ubi.com
+
 DOMAIN-SUFFIX,cloud-skys.com
+
 DOMAIN-SUFFIX,ntco.win
+
 #DOMAIN-SUFFIX,fastly-download.epicgames.com
+
 #DOMAIN-SUFFIX,d4c.srv.nintendo.net
-#DOMAIN-SUFFIX,cephalon.cloud
-#DOMAIN-SUFFIX,hzzaien.com
+
+DOMAIN-SUFFIX,cephalon.cloud
+DOMAIN-SUFFIX,hzzaien.com
