@@ -12,3 +12,6 @@ DOMAIN-SUFFIX,www.google.com
 # tailscale
 DOMAIN-SUFFIX,pkgs.tailscale.com
 DOMAIN-SUFFIX,dl.tailscale.com
+
+# virtamate
+#DOMAIN-SUFFIX,virtamate.com
