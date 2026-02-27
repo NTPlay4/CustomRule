@@ -14,4 +14,4 @@ DOMAIN-SUFFIX,pkgs.tailscale.com
 DOMAIN-SUFFIX,dl.tailscale.com
 
 # virtamate
-#DOMAIN-SUFFIX,virtamate.com
+DOMAIN-SUFFIX,virtamate.com
