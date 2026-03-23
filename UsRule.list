@@ -15,3 +15,6 @@ DOMAIN-SUFFIX,dl.tailscale.com
 
 # virtamate
 DOMAIN-SUFFIX,virtamate.com
+
+# iwara
+DOMAIN-SUFFIX,iwara.tv
