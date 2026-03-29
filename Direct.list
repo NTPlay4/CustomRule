@@ -42,8 +42,8 @@ DOMAIN-SUFFIX,localhost
 
 
 # 热血江湖996
-DOMAIN-SUFFIX,rxygcy
-DOMAIN-SUFFIX,rxyqcy
+DOMAIN-KEYWORD,rxygcy
+DOMAIN-KEYWORD,rxyqcy
 
 # tailscale
 DOMAIN-SUFFIX,taile998.ts.net
