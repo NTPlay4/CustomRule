@@ -65,7 +65,7 @@ DOMAIN-SUFFIX,05xrjh.com
 # CF地理位置验证
 DOMAIN-SUFFIX,blog.cloudflare.com
 
-#群晖
+# 群晖
 DOMAIN-SUFFIX,myds.me
 DOMAIN-SUFFIX,quickconnect.to
 DOMAIN-SUFFIX,quickconnect.cn
