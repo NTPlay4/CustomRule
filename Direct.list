@@ -70,3 +70,6 @@ DOMAIN-SUFFIX,blog.cloudflare.com
 DOMAIN-SUFFIX,myds.me
 DOMAIN-SUFFIX,quickconnect.to
 DOMAIN-SUFFIX,quickconnect.cn
+
+# bing
+DOMAIN-SUFFIX,bing.com
