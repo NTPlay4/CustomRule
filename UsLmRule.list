@@ -24,3 +24,6 @@ DOMAIN-KEYWORD,pixeldrain.com
 # tailscale
 DOMAIN-SUFFIX,pkgs.tailscale.com
 DOMAIN-SUFFIX,dl.tailscale.com
+
+# synologydownload
+DOMAIN-SUFFIX,synologydownload.com
