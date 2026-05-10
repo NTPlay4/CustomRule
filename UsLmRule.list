@@ -27,3 +27,6 @@ DOMAIN-SUFFIX,dl.tailscale.com
 
 # synologydownload
 DOMAIN-SUFFIX,synologydownload.com
+
+# dockerhub1
+DOMAIN-SUFFIX,dockerhub1.beget.com
