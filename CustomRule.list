@@ -33,3 +33,6 @@ DOMAIN-SUFFIX,mhh1.com
 
 # 谷歌翻译
 DOMAIN-SUFFIX,translate.google.com
+
+# synology
+DOMAIN-SUFFIX,synology.com
