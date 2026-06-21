@@ -38,4 +38,4 @@ DOMAIN-SUFFIX,translate.google.com
 DOMAIN-SUFFIX,synology.com
 
 # cdpred
-DOMAIN-SUFFIX,live.cdpred.services:
+DOMAIN-SUFFIX,live.cdpred.services
