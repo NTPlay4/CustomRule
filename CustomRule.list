@@ -36,3 +36,6 @@ DOMAIN-SUFFIX,translate.google.com
 
 # synology
 DOMAIN-SUFFIX,synology.com
+
+# cdpred
+DOMAIN-SUFFIX,live.cdpred.services:
