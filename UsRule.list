@@ -39,3 +39,6 @@ DOMAIN-SUFFIX,unifans.io
 
 # cdpred
 DOMAIN-SUFFIX,live.cdpred.services
+
+# hitman
+DOMAIN-SUFFIX,hm3-service.hitman.io
