@@ -35,4 +35,4 @@ DOMAIN-SUFFIX,dockerhub1.beget.com
 DOMAIN-SUFFIX,ubuntu.com
 
 # nintendo下载
-DOMAIN-REGEX,^atum\.[^.]+\.[^.]+\.[^.]+\.srv\.nintendo\.net$
+DOMAIN-REGEX,^atum[^.]*\.[^.]+\.[^.]+\.[^.]+\.srv\.nintendo\.net$
