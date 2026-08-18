@@ -38,5 +38,8 @@ DOMAIN-SUFFIX,ubuntu.com
 # DOMAIN-REGEX,^atum[^.]*\.[^.]+\.[^.]+\.[^.]+\.srv\.nintendo\.net$
 DOMAIN-REGEX,^[^.]+\.[^.]+\.[^.]+\.[^.]+\.srv\.nintendo\.net$
 
-#e-henta下载
+# e-henta下载
 DOMAIN-SUFFIX,hath.network
+
+# rule34video
+DOMAIN-SUFFIX,boomio-cdn.com
