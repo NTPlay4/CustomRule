@@ -34,3 +34,7 @@ DOMAIN-SUFFIX,intl.cloud.tencent.com
 
 # illgames
 DOMAIN-SUFFIX,illgames.jp
+
+# oracle
+DOMAIN-SUFFIX,oracle.com
+DOMAIN-SUFFIX,oraclecloud.com
