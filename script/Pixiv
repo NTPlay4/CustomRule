@@ -1,6 +1,0 @@
-;Pixiv 去广告
-[Script]
-Pixiv Ads = type=http-response,pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(auth\/token),script-path=https://github.com/ddgksf2013/Scripts/raw/master/pixivAds.js,requires-body=true,max-size=1048576
-
-[Mitm]
-hostname = oauth.secure.pixiv.net
