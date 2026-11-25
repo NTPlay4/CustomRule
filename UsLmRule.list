@@ -34,3 +34,6 @@ DOMAIN-SUFFIX,images.igdb.com
 
 # prosperostore PS5游戏库
 DOMAIN-SUFFIX,prosperostore.net
+
+# 群晖
+DOMAIN-SUFFIX,synologydownload.com
