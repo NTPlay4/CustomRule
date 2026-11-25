@@ -49,10 +49,6 @@ DOMAIN-SUFFIX,bepis.moe
 # flathub
 DOMAIN-SUFFIX,flathub.org
 
-# 绅士仓库 cangku.moe
-DOMAIN-KEYWORD,cangku
-
-
 # 群晖
 # DOMAIN-SUFFIX,synology.com
 
@@ -61,13 +57,6 @@ DOMAIN-SUFFIX,flingtrainer.com
 
 # 腾讯云国际
 DOMAIN-SUFFIX,intl.cloud.tencent.com
-
-# illgames
-DOMAIN-SUFFIX,illgames.jp
-
-# oracle
-DOMAIN-SUFFIX,oracle.com
-DOMAIN-SUFFIX,oraclecloud.com
 
 # hmoe
 DOMAIN-SUFFIX,hmoe.link
