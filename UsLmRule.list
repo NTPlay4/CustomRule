@@ -1,32 +1,14 @@
 # cloudflarestorage
 DOMAIN-SUFFIX,cloudflarestorage.com
 
-# pytorch
-DOMAIN-SUFFIX,pytorch.org
-
-# kemono.su
-DOMAIN-KEYWORD,kemono
-
 # VAMDL/CDN77.org
 DOMAIN-KEYWORD,cdn77
 
-# pixeldrain
+# pixeldrain 网盘
 DOMAIN-KEYWORD,pixeldrain.com
 
 # download
 #DOMAIN-KEYWORD,download
-
-# ubi
-#DOMAIN-SUFFIX,ubi.com
-#DOMAIN-SUFFIX,ubisoft.com
-#DOMAIN-SUFFIX,ubisoft-uplay-savegames.s3.amazonaws.com
-
-# tailscale
-DOMAIN-SUFFIX,pkgs.tailscale.com
-DOMAIN-SUFFIX,dl.tailscale.com
-
-# synologydownload
-DOMAIN-SUFFIX,synologydownload.com
 
 # dockerhub1
 DOMAIN-SUFFIX,dockerhub1.beget.com
@@ -44,11 +26,11 @@ DOMAIN-SUFFIX,hath.network
 # rule34video
 DOMAIN-SUFFIX,boomio-cdn.com
 
-# prosperostore
-DOMAIN-SUFFIX,prosperostore.net
-
-# store
+# store PS5游戏库
 DOMAIN-SUFFIX,jz7j70.store
 
-# igdb
+# igdb PS5游戏库
 DOMAIN-SUFFIX,images.igdb.com
+
+# prosperostore PS5游戏库
+DOMAIN-SUFFIX,prosperostore.net
