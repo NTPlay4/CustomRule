@@ -17,10 +17,6 @@ DOMAIN-SUFFIX,localhost
 #DOMAIN-SUFFIX,dns.cloudflare.com
 #DOMAIN-SUFFIX,verysync.cn
 
-
-
-
-
 ;DOMAIN-SUFFIX,uploads-sdk.dhsf.xqhuyu.com
 
 #IP-CIDR,37.48.81.219/32,no-resolve
@@ -28,13 +24,6 @@ DOMAIN-SUFFIX,localhost
 #IP-CIDR,212.7.200.99/32,no-resolve
 #IP-CIDR,212.7.202.50/32,no-resolve
 #IP-CIDR,5.79.104.109/32,no-resolve
-
-
-#DOMAIN-SUFFIX,store.ubisoft.com
-#DOMAIN-SUFFIX,store.ubi.com
-#DOMAIN-SUFFIX,cdn.ubi.com
-
-
 
 #DOMAIN-SUFFIX,fastly-download.epicgames.com
 
@@ -51,11 +40,11 @@ DOMAIN-SUFFIX,tailscale.com
 
 # 自用域名
 DOMAIN-SUFFIX,cloud-skys.com
+DOMAIN-SUFFIX,58xzy.cn
 DOMAIN-SUFFIX,ntco.win
 
 # 端脑云
 DOMAIN-SUFFIX,cephalon.cloud
-
 
 # 杭州仔恩
 DOMAIN-SUFFIX,hzzaien.com
