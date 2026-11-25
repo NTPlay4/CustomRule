@@ -34,11 +34,6 @@ DOMAIN-SUFFIX,aleph.cloud
 DOMAIN-SUFFIX,acg.lol
 DOMAIN-SUFFIX,image.acg.lol
 
-# uu-gg
-DOMAIN-SUFFIX,uu-gg.one
-DOMAIN-SUFFIX,imgooo.top
-DOMAIN-SUFFIX,p88.top
-
 # pokemon-home.com
 DOMAIN-SUFFIX,pokemon-home.com
 
@@ -107,5 +102,3 @@ DOMAIN-SUFFIX,hm3-service.hitman.io
 # civitai
 DOMAIN-SUFFIX,civitai.red
 
-# blue-plus
-DOMAIN-SUFFIX,blue-plus.net
