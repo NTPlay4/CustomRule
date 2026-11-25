@@ -33,8 +33,5 @@ DOMAIN-SUFFIX,mhh1.com
 DOMAIN-SUFFIX,aleph.cloud
 DOMAIN-SUFFIX,acg.lol
 
-# 谷歌翻译
-DOMAIN-SUFFIX,translate.google.com
-
 # synology
 DOMAIN-SUFFIX,synology.com
