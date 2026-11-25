@@ -34,6 +34,11 @@ DOMAIN-SUFFIX,aleph.cloud
 DOMAIN-SUFFIX,acg.lol
 DOMAIN-SUFFIX,image.acg.lol
 
+# uu-gg
+DOMAIN-SUFFIX,uu-gg.one
+DOMAIN-SUFFIX,imgooo.top
+DOMAIN-SUFFIX,p88.top
+
 # pokemon-home.com
 DOMAIN-SUFFIX,pokemon-home.com
 
@@ -77,3 +82,30 @@ DOMAIN-SUFFIX,pytorch.org
 DOMAIN-SUFFIX,pkgs.tailscale.com
 DOMAIN-SUFFIX,dl.tailscale.com
 
+# gamer520.com
+DOMAIN-SUFFIX,gamer520.com
+
+# tailscale
+DOMAIN-SUFFIX,pkgs.tailscale.com
+DOMAIN-SUFFIX,dl.tailscale.com
+
+# virtamate
+DOMAIN-SUFFIX,virtamate.com
+
+# iwara
+DOMAIN-SUFFIX,iwara.tv
+
+# 引力圈
+DOMAIN-SUFFIX,unifans.io
+
+# cdpred蠢驴
+DOMAIN-SUFFIX,live.cdpred.services
+
+# hitman 杀手官方
+DOMAIN-SUFFIX,hm3-service.hitman.io
+
+# civitai
+DOMAIN-SUFFIX,civitai.red
+
+# blue-plus
+DOMAIN-SUFFIX,blue-plus.net
